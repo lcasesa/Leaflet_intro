@@ -156,7 +156,7 @@ function getData(map){
         })
         .then(function(json){
             var attributes = processData(json);
-            minValue = calcMinValue(json);
+            minValue = calculateMinValue(json);
             //call function to create proportional symbols
             createPropSymbols(json);
             createSequenceControls();
