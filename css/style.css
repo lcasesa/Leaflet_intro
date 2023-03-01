@@ -1,5 +1,39 @@
 #map {
-    height: 800px;
-    width: 1500px;
+    height: 900px;
+    width: 80%;
+    display: inline-block;
+}
+
+#panel {    
+    width: 16%;    
+    padding: 20px;
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+    line-height: 42px;
+}
+
+.range-slider {  
+    width: 55%;  
+}  
+
+.step {  
+    width: 20%;  
+}  
+
+.step img {  
+    width: 100%;  
+}  
+
+#forward {  
+    float: right;  
+}  
+
+#reverse {  
+    float: left;  
+}
+
+.leaflet-popup-content p {
+    margin: 0.2em 0;
 }
 

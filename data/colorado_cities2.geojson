@@ -1,0 +1,305 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "city_name": "Denver",
+                "Pop_2013": 649391,
+                "Pop_2014": 664582,
+                "Pop_2015": 683285,
+                "Pop_2016": 696159,
+                "Pop_2017": 704961,
+                "Pop_2018": 716265,
+                "Pop_2019": 727211
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -104.985798,
+                    39.740959
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "city_name": "Colorado Springs",
+                "Pop_2013": 438146,
+                "Pop_2014": 442361,
+                "Pop_2015": 449572,
+                "Pop_2016": 458714,
+                "Pop_2017": 465167,
+                "Pop_2018": 472567,
+                "Pop_2019": 478221
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -104.813228,
+                    38.875356
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "city_name": "Aurora",
+                "Pop_2013": 345613,
+                "Pop_2014": 352660,
+                "Pop_2015": 360098,
+                "Pop_2016": 363277,
+                "Pop_2017": 367574,
+                "Pop_2018": 374572,
+                "Pop_2019": 379289
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -104.77848,
+                    39.696178
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "city_name": "Fort Collins",
+                "Pop_2013": 152668,
+                "Pop_2014": 156804,
+                "Pop_2015": 160991,
+                "Pop_2016": 163004,
+                "Pop_2017": 165541,
+                "Pop_2018": 168324,
+                "Pop_2019": 170243
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -105.06543,
+                    40.542844
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "city_name": "Lakewood",
+                "Pop_2013": 146878,
+                "Pop_2014": 149434,
+                "Pop_2015": 152052,
+                "Pop_2016": 154039,
+                "Pop_2017": 154966,
+                "Pop_2018": 156682,
+                "Pop_2019": 157935
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -105.089117,
+                    39.717449
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "city_name": "Thornton",
+                "Pop_2013": 127022,
+                "Pop_2014": 129479,
+                "Pop_2015": 132176,
+                "Pop_2016": 134574,
+                "Pop_2017": 136777,
+                "Pop_2018": 139352,
+                "Pop_2019": 141464
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -104.940555,
+                    39.928901
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "city_name": "Arvada",
+                "Pop_2013": 111872,
+                "Pop_2014": 113692,
+                "Pop_2015": 115406,
+                "Pop_2016": 117710,
+                "Pop_2017": 118950,
+                "Pop_2018": 120421,
+                "Pop_2019": 121272
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -105.09751,
+                    39.820145
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "city_name": "Westminster",
+                "Pop_2013": 110422,
+                "Pop_2014": 111517,
+                "Pop_2015": 112420,
+                "Pop_2016": 112984,
+                "Pop_2017": 112961,
+                "Pop_2018": 113227,
+                "Pop_2019": 113166
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -105.049309,
+                    39.887119
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "city_name": "Pueblo",
+                "Pop_2013": 107670,
+                "Pop_2014": 107823,
+                "Pop_2015": 108955,
+                "Pop_2016": 110118,
+                "Pop_2017": 111059,
+                "Pop_2018": 111725,
+                "Pop_2019": 112361
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -104.606727,
+                    38.293737
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "city_name": "Centennial",
+                "Pop_2013": 106634,
+                "Pop_2014": 107438,
+                "Pop_2015": 109120,
+                "Pop_2016": 109735,
+                "Pop_2017": 110388,
+                "Pop_2018": 110814,
+                "Pop_2019": 110937
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -104.92062,
+                    39.586666
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "city_name": "Greeley",
+                "Pop_2013": 96848,
+                "Pop_2014": 99055,
+                "Pop_2015": 101763,
+                "Pop_2016": 104751,
+                "Pop_2017": 106780,
+                "Pop_2018": 107475,
+                "Pop_2019": 108649
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -104.771307,
+                    40.411237
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "city_name": "Boulder",
+                "Pop_2013": 102719,
+                "Pop_2014": 104451,
+                "Pop_2015": 106742,
+                "Pop_2016": 107128,
+                "Pop_2017": 106447,
+                "Pop_2018": 106008,
+                "Pop_2019": 105673
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -105.259703,
+                    40.016412
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "city_name": "Longmont",
+                "Pop_2013": 90221,
+                "Pop_2014": 90623,
+                "Pop_2015": 92280,
+                "Pop_2016": 93269,
+                "Pop_2017": 94637,
+                "Pop_2018": 96536,
+                "Pop_2019": 97261
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -105.16261,
+                    40.163537
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "city_name": "Loveland",
+                "Pop_2013": 71337,
+                "Pop_2014": 72514,
+                "Pop_2015": 74886,
+                "Pop_2016": 76399,
+                "Pop_2017": 76880,
+                "Pop_2018": 77752,
+                "Pop_2019": 78877
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -105.084737,
+                    40.413649
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "city_name": "Broomfield",
+                "Pop_2013": 60149,
+                "Pop_2014": 61764,
+                "Pop_2015": 64866,
+                "Pop_2016": 66513,
+                "Pop_2017": 68263,
+                "Pop_2018": 69324,
+                "Pop_2019": 70465
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -105.044226,
+                    39.938612
+                ]
+            }
+        }
+    ]
+}
