@@ -123,7 +123,7 @@ function updatePropSymbols(attribute){
 
            //add formatted attribute to panel content string
            var year = attribute.split("_")[1];
-           popupContent += "<p><b>Population in " + year + ":</b> " + props[attribute] + " million</p>";
+           popupContent += "<p><b>Population in " + year + ":</b> " + props[attribute] + "</p>";
 
            //update popup with new content
            popup = layer.getPopup();

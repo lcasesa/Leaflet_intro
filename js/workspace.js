@@ -6,7 +6,7 @@ var minValue;
 function createMap() {
     //create the map
     map = L.map('map', {
-        center: [39.74, -96.99],
+        center: [38.74, -95.99],
         zoom: 5
     });
 
@@ -64,7 +64,7 @@ function pointToLayer(feature, latlng, attributes) {
 
     //create marker options
     var options = {
-        fillColor: "#DD3131",
+        fillColor: "#1AA5E1",
         color: "#000",
         weight: 1,
         opacity: 1,
@@ -81,11 +81,11 @@ function pointToLayer(feature, latlng, attributes) {
     var layer = L.circleMarker(latlng, options);
 
     //build popup content string starting with city...Example 2.1 line 24
-    var popupContent = "<p><b>City:</b> " + feature.properties.city_name + "</p>";
+    var popupContent = "<p><b>Park:</b> " + feature.properties.park_name + "</p>";
 
     //add formatted attribute to popup content string
     var year = attribute.split("_")[1];
-    popupContent += "<p><b>Population in " + year + ":</b> " + feature.properties[attribute] + " </p>";
+    popupContent += "<p><b>Visitors in " + year + ":</b> " + feature.properties[attribute] + " </p>";
 
     //bind the popup to the circle marker
     layer.bindPopup(popupContent, {
@@ -119,11 +119,11 @@ function updatePropSymbols(attribute){
            layer.setRadius(radius);
 
            //add city to popup content string
-           var popupContent = "<p><b>City:</b> " + props.City + "million</p>";
+           var popupContent = "<p><b>Park:</b> " + props.City + "visitors</p>";
 
            //add formatted attribute to panel content string
            var year = attribute.split("_")[1];
-           popupContent += "<p><b>Population in " + year + ":</b> " + props[attribute] + " million</p>";
+           popupContent += "<p><b>Vistors in " + year + ":</b> " + props[attribute] + " </p>";
 
            //update popup with new content
            popup = layer.getPopup();
@@ -163,7 +163,7 @@ function createSequenceControls(attributes) {
     document.querySelector("#panel").insertAdjacentHTML('beforeend', slider);
 
     //set slider attributes
-    document.querySelector(".range-slider").max = 9;
+    document.querySelector(".range-slider").max = 8;
     document.querySelector(".range-slider").min = 0;
     document.querySelector(".range-slider").value = 0;
     document.querySelector(".range-slider").step = 1;
@@ -185,11 +185,11 @@ function createSequenceControls(attributes) {
             if (step.id == 'forward') {
                 index++;
                 //Step 7: if past the last attribute, wrap around to first attribute
-                index = index > 9 ? 0 : index;
+                index = index > 8 ? 0 : index;
             } else if (step.id == 'reverse') {
                 index--;
                 //Step 7: if past the first attribute, wrap around to last attribute
-                index = index < 0 ? 9 : index;
+                index = index < 0 ? 8 : index;
             };
 
             //Step 8: update slider
