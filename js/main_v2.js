@@ -64,7 +64,7 @@ function pointToLayer(feature, latlng, attributes) {
 
     //create marker options
     var options = {
-        fillColor: "#1AA5E1",
+        fillColor: "#A21AE1",
         color: "#000",
         weight: 1,
         opacity: 1,
@@ -107,27 +107,27 @@ function createPropSymbols(data, attributes) {
 };
 
 //Step 10: Resize proportional symbols according to new attribute values
-function updatePropSymbols(attribute){
-    map.eachLayer(function(layer){
-      console.log("here!");
-        if (layer.feature && layer.feature.properties[attribute]){
-          //access feature properties
-           var props = layer.feature.properties;
+function updatePropSymbols(attribute) {
+    map.eachLayer(function (layer) {
+        console.log("here!");
+        if (layer.feature && layer.feature.properties[attribute]) {
+            //access feature properties
+            var props = layer.feature.properties;
 
-           //update each feature's radius based on new attribute values
-           var radius = calcPropRadius(props[attribute]);
-           layer.setRadius(radius);
+            //update each feature's radius based on new attribute values
+            var radius = calcPropRadius(props[attribute]);
+            layer.setRadius(radius);
 
-           //add city to popup content string
-           var popupContent = "<p><b>Park:</b> " + props.City + "visitors</p>";
+            //add city to popup content string
+            var popupContent = "<p><b>Park:</b> " + props.City + "visitors</p>";
 
-           //add formatted attribute to panel content string
-           var year = attribute.split("_")[1];
-           popupContent += "<p><b>Vistors in " + year + ":</b> " + props[attribute] + " </p>";
+            //add formatted attribute to panel content string
+            var year = attribute.split("_")[1];
+            popupContent += "<p><b>Vistors in " + year + ":</b> " + props[attribute] + " </p>";
 
-           //update popup with new content
-           popup = layer.getPopup();
-           popup.setContent(popupContent).update();
+            //update popup with new content
+            popup = layer.getPopup();
+            popup.setContent(popupContent).update();
 
         };
     });
@@ -207,7 +207,7 @@ function createSequenceControls(attributes) {
 
         //Step 9: pass new attribute to update symbols
         updatePropSymbols(attributes[index]);
-    
+
     });
 };
 
