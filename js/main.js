@@ -18,7 +18,7 @@ function createMap() {
         maxZoom: 18,
         ext: 'png'
     }).addTo(map);
-
+    
     //call getData function
     getData(map);
 };
@@ -75,7 +75,7 @@ function pointToLayer(feature, latlng, attributes) {
 
     //create marker options
     var options = {
-        fillColor: "#A21AE1",
+        fillColor: "#FFF300",
         color: "#000",
         weight: 1,
         opacity: 1,
