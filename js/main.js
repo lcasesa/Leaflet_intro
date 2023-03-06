@@ -64,6 +64,13 @@ function createPopupContent(properties, attribute){
     return popupContent;
 };
 
+function PopupContent(properties, attribute){
+    this.properties = properties;
+    this.attribute = attribute;
+    this.year = attribute.split("_")[1];
+    this.population = this.properties[attribute];
+    this.formatted = "<p><b>Parks:</b> " + this.properties.park_name + "</p><p><b>Visitors in " + this.year + ":</b> " + this.population + " </p>";
+};
 
 //function to convert markers to circle markers
 function pointToLayer(feature, latlng, attributes) {
@@ -91,10 +98,19 @@ function pointToLayer(feature, latlng, attributes) {
     //create circle marker layer
     var layer = L.circleMarker(latlng, options);
 
-    var popupContent = createPopupContent(feature.properties, attribute);
+    //create new popup content...Example 1.4 line 1
+    var popupContent = new PopupContent(feature.properties, attribute);
 
-    //bind the popup to the circle marker
-    layer.bindPopup(popupContent, {
+    //create another popup based on the first
+    var popupContent2 = Object.create(popupContent);
+
+    //change the formatting of popup 2
+    popupContent2.formatted = "<h2>" + popupContent.population + " visitors</h2>";
+
+    console.log(popupContent.formatted) //original popup content
+
+    //add popup to circle marker
+    layer.bindPopup(popupContent2.formatted, {
           offset: new L.Point(0,-options.radius)
       });
 
@@ -115,7 +131,7 @@ function createPropSymbols(data, attributes) {
 //Step 10: Resize proportional symbols according to new attribute values
 function updatePropSymbols(attribute) {
     map.eachLayer(function (layer) {
-        console.log("here!");
+        
         if (layer.feature && layer.feature.properties[attribute]) {
             //access feature properties
             var props = layer.feature.properties;
@@ -125,11 +141,11 @@ function updatePropSymbols(attribute) {
             layer.setRadius(radius);
 
             //add city to popup content string
-            var popupContent = createPopupContent(props, attribute);
+            var popupContent = new PopupContent(props, attribute);
 
             //update popup with new content
             var popup = layer.getPopup();
-            popup.setContent(popupContent).update();
+            popup.setContent(popupContent.formatted).update();
         };
     });
 };
@@ -149,9 +165,6 @@ function processData(data) {
             attributes.push(attribute);
         };
     };
-
-    //check result
-    console.log(attributes);
 
     return attributes;
 };
