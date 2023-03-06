@@ -53,14 +53,25 @@ function calcPropRadius(attValue) {
     return radius;
 };
 
+function createPopupContent(properties, attribute){
+    //add city to popup content string
+    var popupContent = "<p><b>Park:</b> " + properties.park_name + "</p>";
+
+    //add formatted attribute to panel content string
+    var year = attribute.split("_")[1];
+    popupContent += "<p><b>Visitors in " + year + ":</b> " + properties[attribute] + " </p>";
+
+    return popupContent;
+};
+
+
 //function to convert markers to circle markers
 function pointToLayer(feature, latlng, attributes) {
     //Step 4: Assign the current attribute based on the first index of the attributes array
     var attribute = attributes[0];
-    //check
-    console.log(attribute);
+   
     //Determine which attribute to visualize with proportional symbols
-    var attribute = "Pop_2021";
+    var attribute = "Pop_2013";
 
     //create marker options
     var options = {
@@ -80,20 +91,13 @@ function pointToLayer(feature, latlng, attributes) {
     //create circle marker layer
     var layer = L.circleMarker(latlng, options);
 
-    //build popup content string starting with city...Example 2.1 line 24
-    var popupContent = "<p><b>Park:</b> " + feature.properties.park_name + "</p>";
-
-    //add formatted attribute to popup content string
-    var year = attribute.split("_")[1];
-    popupContent += "<p><b>Visitors in " + year + ":</b> " + feature.properties[attribute] + " </p>";
+    var popupContent = createPopupContent(feature.properties, attribute);
 
     //bind the popup to the circle marker
     layer.bindPopup(popupContent, {
-        offset: new L.Point(0, -options.radius)
-    });
+          offset: new L.Point(0,-options.radius)
+      });
 
-
-    
     //return the circle marker to the L.geoJson pointToLayer option
     return layer;
 };
@@ -121,16 +125,11 @@ function updatePropSymbols(attribute) {
             layer.setRadius(radius);
 
             //add city to popup content string
-            var popupContent = "<p><b>Park:</b> " + props.City + "visitors</p>";
-
-            //add formatted attribute to panel content string
-            var year = attribute.split("_")[1];
-            popupContent += "<p><b>Vistors in " + year + ":</b> " + props[attribute] + " </p>";
+            var popupContent = createPopupContent(props, attribute);
 
             //update popup with new content
-            popup = layer.getPopup();
+            var popup = layer.getPopup();
             popup.setContent(popupContent).update();
-
         };
     });
 };
