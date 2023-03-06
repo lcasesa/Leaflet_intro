@@ -6,8 +6,8 @@ var minValue;
 function createMap() {
     //create the map
     map = L.map('map', {
-        center: [39.74, -104.99],
-        zoom: 8
+        center: [38.74, -95.99],
+        zoom: 5
     });
 
     //add OSM base tilelayer
@@ -60,11 +60,11 @@ function pointToLayer(feature, latlng, attributes) {
     //check
     console.log(attribute);
     //Determine which attribute to visualize with proportional symbols
-    var attribute = "Pop_2019";
+    var attribute = "Pop_2021";
 
     //create marker options
     var options = {
-        fillColor: "#DD3131",
+        fillColor: "#A21AE1",
         color: "#000",
         weight: 1,
         opacity: 1,
@@ -81,17 +81,19 @@ function pointToLayer(feature, latlng, attributes) {
     var layer = L.circleMarker(latlng, options);
 
     //build popup content string starting with city...Example 2.1 line 24
-    var popupContent = "<p><b>City:</b> " + feature.properties.city_name + "</p>";
+    var popupContent = "<p><b>Park:</b> " + feature.properties.park_name + "</p>";
 
     //add formatted attribute to popup content string
     var year = attribute.split("_")[1];
-    popupContent += "<p><b>Population in " + year + ":</b> " + feature.properties[attribute] + " </p>";
+    popupContent += "<p><b>Visitors in " + year + ":</b> " + feature.properties[attribute] + " </p>";
 
     //bind the popup to the circle marker
     layer.bindPopup(popupContent, {
         offset: new L.Point(0, -options.radius)
     });
 
+
+    
     //return the circle marker to the L.geoJson pointToLayer option
     return layer;
 };
@@ -107,27 +109,27 @@ function createPropSymbols(data, attributes) {
 };
 
 //Step 10: Resize proportional symbols according to new attribute values
-function updatePropSymbols(attribute){
-    map.eachLayer(function(layer){
-      console.log("here!");
-        if (layer.feature && layer.feature.properties[attribute]){
-          //access feature properties
-           var props = layer.feature.properties;
+function updatePropSymbols(attribute) {
+    map.eachLayer(function (layer) {
+        console.log("here!");
+        if (layer.feature && layer.feature.properties[attribute]) {
+            //access feature properties
+            var props = layer.feature.properties;
 
-           //update each feature's radius based on new attribute values
-           var radius = calcPropRadius(props[attribute]);
-           layer.setRadius(radius);
+            //update each feature's radius based on new attribute values
+            var radius = calcPropRadius(props[attribute]);
+            layer.setRadius(radius);
 
-           //add city to popup content string
-           var popupContent = "<p><b>City:</b> " + props.City + "</p>";
+            //add city to popup content string
+            var popupContent = "<p><b>Park:</b> " + props.City + "visitors</p>";
 
-           //add formatted attribute to panel content string
-           var year = attribute.split("_")[1];
-           popupContent += "<p><b>Population in " + year + ":</b> " + props[attribute] + "</p>";
+            //add formatted attribute to panel content string
+            var year = attribute.split("_")[1];
+            popupContent += "<p><b>Vistors in " + year + ":</b> " + props[attribute] + " </p>";
 
-           //update popup with new content
-           popup = layer.getPopup();
-           popup.setContent(popupContent).update();
+            //update popup with new content
+            popup = layer.getPopup();
+            popup.setContent(popupContent).update();
 
         };
     });
@@ -163,7 +165,7 @@ function createSequenceControls(attributes) {
     document.querySelector("#panel").insertAdjacentHTML('beforeend', slider);
 
     //set slider attributes
-    document.querySelector(".range-slider").max = 6;
+    document.querySelector(".range-slider").max = 8;
     document.querySelector(".range-slider").min = 0;
     document.querySelector(".range-slider").value = 0;
     document.querySelector(".range-slider").step = 1;
@@ -185,11 +187,11 @@ function createSequenceControls(attributes) {
             if (step.id == 'forward') {
                 index++;
                 //Step 7: if past the last attribute, wrap around to first attribute
-                index = index > 6 ? 0 : index;
+                index = index > 8 ? 0 : index;
             } else if (step.id == 'reverse') {
                 index--;
                 //Step 7: if past the first attribute, wrap around to last attribute
-                index = index < 0 ? 6 : index;
+                index = index < 0 ? 8 : index;
             };
 
             //Step 8: update slider
@@ -207,7 +209,7 @@ function createSequenceControls(attributes) {
 
         //Step 9: pass new attribute to update symbols
         updatePropSymbols(attributes[index]);
-    
+
     });
 };
 
@@ -215,7 +217,7 @@ function createSequenceControls(attributes) {
 //Import GeoJSON data
 function getData(map) {
     //load the data
-    fetch("data/colorado_cities2.geojson")
+    fetch("data/parks.geojson")
         .then(function (response) {
             return response.json();
         })
