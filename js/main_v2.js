@@ -92,6 +92,9 @@ function pointToLayer(feature, latlng, attributes) {
         offset: new L.Point(0, -options.radius)
     });
 
+
+
+    
     //return the circle marker to the L.geoJson pointToLayer option
     return layer;
 };
