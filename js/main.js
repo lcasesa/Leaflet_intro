@@ -276,7 +276,7 @@ function createLegend(attributes) {
                 var textY = i * 20 + 20;
 
                 //text string            
-                svg += '<text id="' + circles[i] + '-text" x="65" y="' + textY + '">' + Math.round(dataStats[circles[i]] * 100) / 100 + " visitors" + '</text>';
+                svg += '<text id="' + circles[i] + '-text" x="65" y="' + textY + '">' + Math.round(dataStats[circles[i]] * 100) / 100 + "" + '</text>';
             };
 
 

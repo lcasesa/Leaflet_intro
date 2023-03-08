@@ -80,3 +80,13 @@
 .legend-control-container p{
      margin: 0;
 }
+    
+.image {
+    padding: 20px;
+    width: 7%;
+    margin: auto;
+    display: block;
+}
+.container {
+    justify-content: center;
+}
