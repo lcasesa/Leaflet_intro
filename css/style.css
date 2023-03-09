@@ -63,7 +63,7 @@
 .sequence-control-container {  
     width: 350px;  
     height: 30px;  
-    background-color: rgba(255,255,255,0.8);  
+    background-color: #FEFFEC;  
     padding: 10px;  
     line-height: 45px;  
     text-align: center;  
@@ -74,7 +74,7 @@
     width: 150px;
     /*height: 200px;*/
     font-weight: bold;
-    background-color: rgba(255,255,255,0.8);
+    background-color: #FEFFEC;
     padding: 10px;
     text-align: center;
     border: solid gray 1px;
