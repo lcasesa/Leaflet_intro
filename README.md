@@ -1,3 +1,2 @@
-# Unit-2
-GEOG 575 Unit 2
-This is my repo for our introduction to leaflet and lab 1 project!
+# Leaflet Intro
+This is the repo for my first project in Leaflet (UW Madison GEOG 575 Unit 2)
